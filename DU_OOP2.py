@@ -11,11 +11,20 @@ class Device:
 
 
 class Coffee_Machine(Device):
-    def __init__(self, brand, power, water_capacity):
-        self.water_capacity = water_capacity
+    def __init__(self, brand, power, speed_levels):
+        self.speed_levels = speed_levels
+        super().__init__(brand, power)
+
+    def Blend(self):
+        return f"{self.brand} blender is blending things with {self.speed_levels}speed levels."
+
+
+class Meat_grinder(Device):
+    def __init__(self, brand, power, blade_material):
+        self.blade_material = blade_material
         super().__init__(brand, power)
 
     def Make_coffee(self):
-        return f"{self.brand} coffee machine is making coffee with {self.water_capacity}liters of water."
+        return f"{self.brand} meat grinder is grinding meat with {self.water_capacity}blades."
 
 
